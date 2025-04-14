@@ -1,2 +1,2 @@
 # A-fervent-wish
-cover.html 
+<a href="cover.html">Cover</a>
