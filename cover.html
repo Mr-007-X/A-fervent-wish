@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A Gift Awaits in the Shadows...</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Great+Vibes&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0d0d0d, #1a0000);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Cinzel Decorative', serif;
+      color: #f8d7da;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .fog {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: url('https://i.ibb.co/vvhM94k/fog-texture.png') repeat;
+      background-size: cover;
+      opacity: 0.05;
+      animation: drift 60s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes drift {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-100px, -100px); }
+    }
+
+    .cover-container {
+      max-width: 700px;
+      padding: 50px;
+      border: 2px solid #aa0000;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 0 20px #550000;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      font-family: 'Great Vibes', cursive;
+      color: #ffccd5;
+      text-shadow: 2px 2px 4px #800000;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    button {
+      padding: 15px 40px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background: #7f1d1d;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px #ff0033;
+      font-family: 'Cinzel Decorative', serif;
+      text-transform: uppercase;
+    }
+
+    button:hover {
+      background: #b91c1c;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #ff1a4b;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Optional: Floating petals */
+    .petal {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: crimson;
+      border-radius: 50%;
+      animation: fall linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="fog"></div>
+
+  <div class="cover-container">
+    <h1>Step Into the Night</h1>
+    <p>I crafted something for you — timeless, tender, and touched by a bit of darkness. Will you open it?</p>
+    <button onclick="window.location.href='pcard2.html'">Open Your Surprise</button>
+  </div>
+
+  <script>
+    // Optional: Petals fall from the top like blood roses
+    for (let i = 0; i < 30; i++) {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      petal.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
